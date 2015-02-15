@@ -1,7 +1,12 @@
 require "spec_helper"
 
 describe User do
-	it "is valid with an email"
+	it "is valid with an email" do
+     user = User.new(
+      email: 'tester@example.com')
+    expect(user).to be_valid
+  end  
+	#it "is valid with an email"
 	it "is valid with a password"
 	it "is invalid with a duplicate email"
 	it "is invalid without an email address"
