@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'posts/new'
+
   devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'} 
   resources :users
   root "users#index"
