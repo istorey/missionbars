@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admins/new'
+
   devise_for :admins
   get 'walls/new'
 
