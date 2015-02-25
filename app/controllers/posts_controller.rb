@@ -7,6 +7,10 @@ class PostsController < ApplicationController
   	@post = Post.new
   end
 
+  def show
+    @post = Post.find_by( post_param ) 
+  end
+
   def create
   @post = Post.create( post_params )
   	if @post.save
@@ -17,10 +21,16 @@ class PostsController < ApplicationController
 		end
 	end
 
+  def delete
+    @post = Post.destroy(post_param)
+  end
 private
 
 # Use strong_parameters for attribute whitelisting
 # Be sure to update your create() and update() controller methods.
+  def post_param
+    params.require(:posts).permit(:image)
+  end
 
 	def post_params
 	  params.require(:post).permit(:image)

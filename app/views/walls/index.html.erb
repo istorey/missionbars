@@ -1,5 +1,6 @@
+
 <% @post.each do |post| %>
-			
-			<div><a href="/delete/<%= post.id %>"> <img class ="image" src="<%= post.image %>"></a>
-			</div>
-			<% end %>
+	<div><%= image_tag post.image(:thumb) %></div>
+	<%  end %>
+
+
